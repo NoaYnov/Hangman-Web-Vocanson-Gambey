@@ -1,3 +1,3 @@
-module main
+module src
 
 go 1.19

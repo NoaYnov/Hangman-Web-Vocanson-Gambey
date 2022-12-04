@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,12 @@
 <body>
     
 
-{{if .Success}}
-    <h1>Bienvenue {{.Hangman}}</h1>
-{{else}}
+
     <form method="POST">
-        <label>Hangman:</label><br />
-        <input type="text" name="hangman"><br />
+        <h1>Hangman</h1><br/>
+        <input type="text" name="hangman" class="formulaire"><br/>
         <input type="submit">
     </form>
-{{end}}
-<a href="/">Retour à l'accueil</a>
+<a href="/">Retour à la difficulté</a>
 </body>
 </html>
