@@ -8,7 +8,8 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	// "src/hangman"
+	"src/hangman"
+	// "fmt"
 )
 
 
@@ -42,7 +43,7 @@ func main() {
 			choix2: r.FormValue("moyen"),
 			choix3: r.FormValue("difficile"),
         }
-		register(r)
+		// register(r)
         tmpl1.Execute(w, details)
 		
 	})
@@ -69,11 +70,14 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
-func register(r *http.Request) string{
-	return r.FormValue("choice")
+
+
+
+
+func HangDif(r *http.Request) {
+	var hang hangman.Hang
+	hang.InitHang(r.FormValue("choice"))
+	// fmt.Println(choix)
 
 
 }
-
-
-
