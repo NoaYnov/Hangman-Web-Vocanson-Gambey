@@ -6,6 +6,7 @@ import (
 	// "log"
 	"net/http"
 	"src/hangman"
+	"fmt"
 )
 
 type User struct {
@@ -38,9 +39,11 @@ func difficulté(w http.ResponseWriter, r *http.Request) {
 		choix1: r.FormValue("facile"),
 		choix2: r.FormValue("moyen"),
 		choix3: r.FormValue("difficile"),
+		Success: true,
 	}
 	tmpl1.Execute(w, details)
-	http.Redirect(w, r, "register.html", 100)
+	Test(r, w)
+	
 	
 	
 }
@@ -58,6 +61,8 @@ func register(w http.ResponseWriter, r *http.Request) {
 		
 	}
 	tmp2.Execute(w, details)
+	Testform(r, w)
+
 	
 }
 
@@ -66,9 +71,15 @@ func register(w http.ResponseWriter, r *http.Request) {
 func HangDif(r *http.Request, w http.ResponseWriter) {
 	var hang hangman.Hang
 	hang.Start(r.FormValue("choice"))
+	return
 	
 }
 
 
-
+func Test(r *http.Request, w http.ResponseWriter) {
+	fmt.Println(r.FormValue("choice"))
+}
   
+func Testform(r *http.Request, w http.ResponseWriter) {
+	fmt.Println(r.FormValue("letter"))
+}

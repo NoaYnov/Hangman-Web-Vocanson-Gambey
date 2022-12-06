@@ -11,9 +11,23 @@
 
 <body id="neon">
 
+    {{if .Success}}
 
+    <h1>Veux-tu changer ?</h1>
+    <a href="/register" class="center">Continuer
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <a href="/" class="center">Retour
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
 
-
+    {{else}}
     <h1>Bienvenue</h1>
     <form method="POST">
 
@@ -38,28 +52,19 @@
                 </div>
             </div>
         </div>
+
         <div class="dpx">
             <div class="px">
 
+                <input type="submit" name="choice" value="Jouer" />
 
-                <div class="a">
-                <input type="submit" id="submit" class="a" name="choice" value="Jouer" />
-
-                    <span class="a1"></span>
-                    <span class="a2"></span>
-                    <span class="a3"></span>
-                    <span class="a4"></span>
-                    Jouer
-                   
-                
-                </div>
 
             </div>
         </div>
 
 
     </form>
-
+    {{end}}
 </body>
 
 </html>
