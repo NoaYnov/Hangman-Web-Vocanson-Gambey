@@ -1,10 +1,10 @@
 package hangman
 
-import ("os"
-		"time"
-		"math/rand"
-	)
-
+import (
+	"math/rand"
+	"os"
+	"time"
+)
 
 func (w *Hang) SaveFileToTab(dif string) []string {
 	var list []string
@@ -29,7 +29,7 @@ func (w *Hang) SaveFileToTab(dif string) []string {
 	return list
 }
 
-func RandomWord (file []string) string{
+func RandomWord(file []string) string {
 	rand.Seed(time.Now().UnixNano())
-    return file[rand.Intn(len(file)-1)]
+	return file[rand.Intn(len(file)-1)]
 }
