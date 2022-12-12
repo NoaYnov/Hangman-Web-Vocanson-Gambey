@@ -9,11 +9,13 @@ import (
 )
 
 type User struct {
+	Hang    *hangman.Hang
 	Hangman string
 	Success bool
 	choix1  string
 	choix2  string
 	choix3  string
+	//liste   []string
 }
 
 type Input struct {
@@ -48,6 +50,7 @@ func (i *Input) difficulté(w http.ResponseWriter, r *http.Request) {
 }
 
 func (i *Input) register(w http.ResponseWriter, r *http.Request) {
+	var hang hangman.Hang
 	tmp2 := template.Must(template.ParseFiles("register.html"))
 	if r.Method != http.MethodPost {
 		tmp2.Execute(w, nil)
@@ -55,16 +58,11 @@ func (i *Input) register(w http.ResponseWriter, r *http.Request) {
 	}
 	details := User{
 		Hangman: r.FormValue("letter"),
-		Success: true,
+		Hang:    hang.Start(r, w, i.Diff),
+		//liste:
 	}
 	tmp2.Execute(w, details)
-	HangDif(r, w, i.Diff)
 	Testform(r, w)
-}
-
-func HangDif(r *http.Request, w http.ResponseWriter, diff string) {
-	var hang hangman.Hang
-	hang.Start(r, w, diff)
 }
 
 func Test(r *http.Request, w http.ResponseWriter) {

@@ -8,7 +8,7 @@ type Hang struct {
 	NbLetter int
 	NbTry    int
 	I        int
-	letters  string
+	Letters  string
 }
 
 func (w *Hang) InitHang(diff string) {
