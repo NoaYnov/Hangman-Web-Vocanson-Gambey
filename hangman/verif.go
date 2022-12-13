@@ -29,7 +29,6 @@ func (w *Hang) CheckEnd() {
 	if w.NbTry <= 0 {
 		w.Loop = false
 		fmt.Println("You lose, the word was", w.Word)
-		w.Loop = false
 	}
 	for i := 0; i < len(w.Word); i++ {
 		if w.Guess[i] == "_" {
@@ -38,4 +37,5 @@ func (w *Hang) CheckEnd() {
 	}
 	fmt.Println("you win")
 	w.Loop = false
+	w.Win = true
 }

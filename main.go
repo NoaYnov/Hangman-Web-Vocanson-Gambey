@@ -15,11 +15,11 @@ type User struct {
 	choix1  string
 	choix2  string
 	choix3  string
-	//liste   []string
 }
 
 type Input struct {
 	Diff string
+	Name string
 }
 
 func main() {
@@ -59,7 +59,6 @@ func (i *Input) register(w http.ResponseWriter, r *http.Request) {
 	details := User{
 		Hangman: r.FormValue("letter"),
 		Hang:    hang.Start(r, w, i.Diff),
-		//liste:
 	}
 	tmp2.Execute(w, details)
 	Testform(r, w)

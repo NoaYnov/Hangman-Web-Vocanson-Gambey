@@ -141,14 +141,7 @@ label{
 }
 
 
-#center{
-    position: absolute;
-    left: 50%;
-    top: 82%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-}
+
 
 .center{
   position: relative;
@@ -158,6 +151,7 @@ label{
   text-align: center;
   font-family: 'Raleway', sans-serif;
 }
+
 
 
 .formulaire{

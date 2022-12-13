@@ -2,6 +2,7 @@ package hangman
 
 type Hang struct {
 	Loop     bool
+	Win      bool
 	Word     string
 	Guess    []string
 	José     []string
@@ -20,4 +21,6 @@ func (w *Hang) InitHang(diff string) {
 	}
 	w.NbTry = 10
 	w.José = SaveJoséToTab()
+	w.I = 0
+	w.Letters = ""
 }
