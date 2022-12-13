@@ -15,24 +15,21 @@ type User struct {
 	choix1  string
 	choix2  string
 	choix3  string
-}
-
-type Input struct {
-	Diff string
-	Name string
+	Name    string
 }
 
 func main() {
-	var i Input
+	var u User
 	fs := http.FileServer(http.Dir("css"))
 	http.Handle("/css/", http.StripPrefix("/css/", fs))
-	http.HandleFunc("/", i.difficulté)
-	http.HandleFunc("/register", i.register)
+	http.HandleFunc("/", u.Difficulte)
+	http.HandleFunc("/register", u.register)
 	http.ListenAndServe(":8080", nil)
 
 }
 
-func (i *Input) difficulté(w http.ResponseWriter, r *http.Request) {
+func (u *User) Difficulte(w http.ResponseWriter, r *http.Request) {
+	var hang hangman.Hang
 	tmpl1 := template.Must(template.ParseFiles("index.html"))
 	if r.Method != http.MethodPost {
 		tmpl1.Execute(w, nil)
@@ -42,23 +39,19 @@ func (i *Input) difficulté(w http.ResponseWriter, r *http.Request) {
 		choix1:  r.FormValue("facile"),
 		choix2:  r.FormValue("moyen"),
 		choix3:  r.FormValue("difficile"),
+		Hang:    hang.Init(r, w, r.FormValue("choice")),
 		Success: true,
 	}
 	tmpl1.Execute(w, details)
-	i.Diff = r.FormValue("choice")
 	Test(r, w)
 }
 
-func (i *Input) register(w http.ResponseWriter, r *http.Request) {
+func (u *User) register(w http.ResponseWriter, r *http.Request) {
 	var hang hangman.Hang
 	tmp2 := template.Must(template.ParseFiles("register.html"))
-	if r.Method != http.MethodPost {
-		tmp2.Execute(w, nil)
-		return
-	}
 	details := User{
 		Hangman: r.FormValue("letter"),
-		Hang:    hang.Start(r, w, i.Diff),
+		Hang:    hang.Start(r, w),
 	}
 	tmp2.Execute(w, details)
 	Testform(r, w)

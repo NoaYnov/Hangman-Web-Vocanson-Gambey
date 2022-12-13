@@ -290,4 +290,121 @@ a span:nth-child(4){
     }
 }
 
+.deco{
+  position:relative;
+  height: 2px;
+  width: 100%;
+  top: 440px;
 
+  background-color: white;
+}
+
+
+.jose10{
+  position:absolute;
+  height: 2px;
+  width: 80px;
+  top: 350px;
+  transform: rotate(45deg);
+  left:112.5px;
+
+  background-color: white;
+}
+.jose9{
+  position:absolute;
+  height: 2px;
+  width: 80px;
+  top: 350px;
+  transform: rotate(-45deg);
+  left:058px;
+
+  background-color: white;
+}
+
+.jose8{
+  position:absolute;
+  height: 2px;
+  width: 90px;
+  top: 280px;
+  transform: rotate(90deg);
+  left:080px;
+
+  background-color: white;
+}
+
+.jose7{
+  position:absolute;
+  height: 2px;
+  width: 80px;
+  top: 270px;
+  transform: rotate(45deg);
+  left:112.5px;
+
+  background-color: white;
+}
+
+.jose6{
+  position:absolute;
+  height: 2px;
+  width: 80px;
+  top: 270px;
+  transform: rotate(-45deg);
+  left:058px;
+
+  background-color: white;
+}
+.jose5{
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  left:088px;
+  top: 162px;
+
+}
+.jose4{
+  position:absolute;
+  height: 2px;
+  width: 20px;
+  top: 151px;
+  transform: rotate(90deg);
+  left:115px;
+
+  background-color: white;
+
+}
+
+.jose3{
+  position:absolute;
+  height: 2px;
+  width: 200px;
+  top: 142px;
+  left:080px;
+
+  background-color: white;
+
+}
+
+.jose2{
+  position:absolute;
+  height: 2px;
+  width: 340px;
+  top: 290px;
+  transform: rotate(90deg);
+  left:110px;
+
+  background-color: white;
+
+}
+
+.jose1{
+  position:absolute;
+  height: 2px;
+  width: 200px;
+  top: 450px;
+  left:080px;
+
+  background-color: white;
+
+}
