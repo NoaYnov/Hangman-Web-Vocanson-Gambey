@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
@@ -7,107 +8,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 </head>
+
 <body>
     {{if .Hang.Loop}}
-    <h1>{{.Hang.Guess}}</h1>
-    <h1>{{.Hang.Letters}}</h1>
-    
-    <!-- désolé -->
-    {{if eq .Hang.NbTry 10}}
 
 
-    {{end}}
+
     {{if eq .Hang.NbTry 9}}
-    <div class="jose1"></div>
+    <div class="g">
+        <div class="jose1"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 8}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 7}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 6}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 5}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 4}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
-    <div class="jose6"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+        <div class="jose6"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 3}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
-    <div class="jose6"></div>
-    <div class="jose7"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+        <div class="jose6"></div>
+        <div class="jose7"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 2}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
-    <div class="jose6"></div>
-    <div class="jose7"></div>
-    <div class="jose8"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+        <div class="jose6"></div>
+        <div class="jose7"></div>
+        <div class="jose8"></div>
+    </div>
     {{end}}
     {{if eq .Hang.NbTry 1}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
-    <div class="jose6"></div>
-    <div class="jose7"></div>
-    <div class="jose8"></div>
-    <div class="jose9"></div>
-    {{end}}
-    {{if eq .Hang.NbTry 0}}
-    <div class="jose1"></div>
-    <div class="jose2"></div>
-    <div class="jose3"></div>
-    <div class="jose4"></div>
-    <div class="jose5"></div>
-    <div class="jose6"></div>
-    <div class="jose7"></div>
-    <div class="jose8"></div>
-    <div class="jose9"></div>
-    <div class="jose10"></div>
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+        <div class="jose6"></div>
+        <div class="jose7"></div>
+        <div class="jose8"></div>
+        <div class="jose9"></div>
+    </div>
     {{end}}
 
-    
-    
+
+
+
     <form method="POST">
         <h1>Hangman</h1>
-       <div class="deco"></div>
+        <div class="deco"></div>
         <input type="text" name="letter" class="formulaire" autofocus>
-        
+
     </form>
+    <h1 class="d2">{{.Hang.Guess}}</h1>
+    <h1 class="d1">{{.Hang.Letters}}</h1>
     {{else}}
     {{if .Hang.Win}}
-    <h1>Win</h1>
+    <h1>Bravo !!! Tu as sauvé José</h1>
+    <a href="/" class="rtr" value="Retour à la difficulté" >
+        <strong>
+            Retour à la difficulté
+        </strong>
     {{else}}
-    <h1>Lose</h1>
+    <h1>Tu as perdu essaye encore</h1>
+    {{if eq .Hang.NbTry 0}}
+    <div class="g">
+        <div class="jose1"></div>
+        <div class="jose2"></div>
+        <div class="jose3"></div>
+        <div class="jose4"></div>
+        <div class="jose5"></div>
+        <div class="jose6"></div>
+        <div class="jose7"></div>
+        <div class="jose8"></div>
+        <div class="jose9"></div>
+        <div class="jose10"></div>
+    </div>
+    <a href="/" class="rtr" value="Retour à la difficulté" >
+        <strong>
+            Retour à la difficulté
+        </strong>
     {{end}}
     {{end}}
-    
+    {{end}}
 </body>
+
 </html>

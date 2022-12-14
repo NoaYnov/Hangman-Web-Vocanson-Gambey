@@ -152,7 +152,40 @@ label{
   font-family: 'Raleway', sans-serif;
 }
 
+.rtr{
+  position: relative;
+  left: 50%;
+  top: 500px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
 
+.d1{
+  position: absolute;
+  left: 90%;
+  top: 210px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+.d2{
+  position: absolute;
+  left: 50%;
+  top: 210px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+
+.g{
+  position: absolute;
+  left: 0%;
+  top: -40px;
+  
+}
 
 .formulaire{
     position: absolute;
@@ -321,7 +354,7 @@ a span:nth-child(4){
   background-color: white;
 }
 
-.jose8{
+.jose6{
   position:absolute;
   height: 2px;
   width: 90px;
@@ -332,7 +365,7 @@ a span:nth-child(4){
   background-color: white;
 }
 
-.jose7{
+.jose8{
   position:absolute;
   height: 2px;
   width: 80px;
@@ -343,7 +376,7 @@ a span:nth-child(4){
   background-color: white;
 }
 
-.jose6{
+.jose7{
   position:absolute;
   height: 2px;
   width: 80px;
@@ -408,3 +441,5 @@ a span:nth-child(4){
   background-color: white;
 
 }
+
+
