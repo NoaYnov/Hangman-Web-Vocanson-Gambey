@@ -1,14 +1,12 @@
 package hangman
 
 import (
-	"fmt"
 	"strings"
 )
 
 func (w *Hang) CheckLetter(letter string) {
 	var tmp bool
 	if strings.Contains(w.Letters, letter) {
-		fmt.Println("Already used")
 		return
 	}
 	for i := 0; i < len(w.Word); i++ {
@@ -20,7 +18,6 @@ func (w *Hang) CheckLetter(letter string) {
 	if !tmp {
 		w.I++
 		w.NbTry--
-		fmt.Print("Wrong letter, ", w.NbTry, "/10 tries left\n")
 	}
 	w.Letters += letter
 }
@@ -28,14 +25,12 @@ func (w *Hang) CheckLetter(letter string) {
 func (w *Hang) CheckEnd() {
 	if w.NbTry <= 0 {
 		w.Loop = false
-		fmt.Println("You lose, the word was", w.Word)
 	}
 	for i := 0; i < len(w.Word); i++ {
 		if w.Guess[i] == "_" {
 			return
 		}
 	}
-	fmt.Println("you win")
 	w.Loop = false
 	w.Win = true
 }

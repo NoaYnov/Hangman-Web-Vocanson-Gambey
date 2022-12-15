@@ -1,7 +1,6 @@
 package hangman
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -15,5 +14,4 @@ func (w *Hang) GetRandomLetter() {
 			w.Guess[tmp] = string(w.Word[tmp])
 		}
 	}
-	fmt.Println(w.Guess)
 }
