@@ -3,7 +3,6 @@ package main
 import (
 	"html/template"
 	// "log"
-	"fmt"
 	"net/http"
 	"src/hangman"
 )
@@ -43,7 +42,7 @@ func (u *User) Difficulte(w http.ResponseWriter, r *http.Request) {
 		Success: true,
 	}
 	tmpl1.Execute(w, details)
-	Test(r, w)
+
 }
 
 func (u *User) register(w http.ResponseWriter, r *http.Request) {
@@ -54,13 +53,7 @@ func (u *User) register(w http.ResponseWriter, r *http.Request) {
 		Hang:    hang.Start(r, w),
 	}
 	tmp2.Execute(w, details)
-	Testform(r, w)
+
 }
 
-func Test(r *http.Request, w http.ResponseWriter) {
-	fmt.Println(r.FormValue("choice"))
-}
 
-func Testform(r *http.Request, w http.ResponseWriter) {
-	fmt.Println(r.FormValue("letter"))
-}
